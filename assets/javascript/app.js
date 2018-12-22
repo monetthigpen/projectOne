@@ -16,18 +16,10 @@
 
 // }
 
-// var start_stop_time = "03:30";
-// var finish_stop_time = "03:35";
-// var ride_time = moment(finish_stop_time, "HH:mm").diff(moment(start_stop_time, "HH:mm"), "minutes");
-// console.log(ride_time);
+var req1 = "Allegheny";
+var req2 = "Bala";
 
-
-//https://septa.p.mashape.com/hackathon/NextToArrive/?req1=Airport+Terminal+B&req2=Ardmore&req3=5
-var req1 = "Airport Terminal B";
-var req2 = "Ardmore";
-var queryURL = "https://septa.p.mashape.com/hackathon/NextToArrive/?req1=" +req1 + "&req2=" + req2 +"req3=5";
-"https://septa.p.mashape.com/hackathon/NextToArrive/?req1=Airport+Terminal+B&req2=Ardmore&req3=5"
-"https://septa.p.mashape.com/hackathon/NextToArrive/?req1=" +req1 + "&req2=" + req2 +"req3=5";
+var queryURL = "https://septa.p.mashape.com/hackathon/NextToArrive/?req1=" +req1.trim() + "&req2=" + req2.trim() +"&req3=1";
 
 $.ajax({
     url: queryURL,
@@ -36,8 +28,15 @@ $.ajax({
           "Accept": "application/json"}
 }).then(function(response){
     console.log(response);
+    console.log(response[0].orig_departure_time);
+    console.log(response[0].orig_arrival_time);
+    var depart_time = response[0].orig_departure_time;
+    var arrival_time =  response[0].orig_arrival_time;
+    var ride_time = moment(arrival_time, "HH:mmA").diff(moment(depart_time, "HH:mmA"), "minutes");
+    console.log(ride_time);
 
 
-}).catch((err) => {
+}).catch((errorObject) => {
     console.log("error : "+errorObject.code);
+    console.log("At this time there are no trains available to complete this trip");
 });
