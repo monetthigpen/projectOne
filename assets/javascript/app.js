@@ -11,55 +11,47 @@ function get_type_of_ride(){
     var stops_array = [];
     console.log(checked_radio_id);
     switch (checked_radio_id){
-        case "AirportLine" : stops_array = "";
+        case "AirportLine" : stops_array = airport;
             break;
-        case "ChestnutHillEastLine" : stops_array = "";
+        case "ChestnutHillEastLine" : stops_array = ChestnutHillEast;
             break;
-        case "ChestnutHillWestLine" : stops_array = "";
+        case "ChestnutHillWestLine" : stops_array = ChestnutHillWest;
             break;
-        case "CynwydLine" : stops_array = "";
+        case "CynwydLine" : stops_array = Cynwyd;
             break;
-        case "FoxChaseLine" : stops_array = "";
+        case "FoxChaseLine" : stops_array = FoxChase;
             break;
-        case "GlensideCombined" : stops_array = "";
+        case "GlensideCombined" : stops_array = Glenside;
             break;
         case "Lansdale/DoylestownLine" : stops_array = LansdaleDoylestownLine;
             break;
         case "CenterCitytoUniversityCity" : stops_array = CenterCitytoUniversityCity;
             break;
-        case "ManayunkNorristownLine" : stops_array = "";
+        case "ManayunkNorristownLine" : stops_array = ManayunkNorriston;
             break;
-        case "MediaElwynLine" : stops_array = "";
+        case "MediaElwynLine" : stops_array = MediaElwynLine;
             break;
-        case "PaoliThorndaleLine" : stops_array = "";
+        case "PaoliThorndaleLine" : stops_array = PaoliThorndale;
             break;
-        case "TrentonLine" : stops_array = "";
+        case "TrentonLine" : stops_array = Trenton;
             break;
-        case "WarminsterLine" : stops_array = "";
+        case "WarminsterLine" : stops_array = Warminster;
             break;
-        case "WestTrentonLine" : stops_array = "";
+        case "WestTrentonLine" : stops_array = WestTrenton;
             break;
         case "WilmingtonNewarkLine" : stops_array = WilmingtonNewarkLine;
             break;
         case "FernRocktoCenterCity" : stops_array = FernRocktoCenterCity;
             break;
     }
-    // $("#stops_list").append("<select class='form-control'>");
-    // for(var i=0; i<stops_array.length; i++){
-    //     $("#stops_list").append("<option id='"+stops_array[i]+"'>"+stops_array[i]+"</option>");
-    // }
-    // $("#stops_list").append("</select>");
     
-    let select = $("<select>");
-    let options
-    `<option>${stops_array[i]}</option>`
-    $(select).append(options);
+    var select = $("<select>");
+    select.addClass("form-control");
+
+    for(var i=0; i<stops_array.length; i++){
+        $(select).append("<option id='"+stops_array[i]+"'>"+stops_array[i]+"</option>");
+    }
     $("#stops_list").append(select);
-    // <select class='form-control'>
-    // <option id='"+stops_array[i]+"'>"+stops_array[i]+"</option>
-    // <option id='"+stops_array[i]+"'>"+stops_array[i]+"</option>
-    // <option id='"+stops_array[i]+"'>"+stops_array[i]+"</option>
-    // </select>
 
     
 };
@@ -70,15 +62,10 @@ function get_type_of_ride(){
 
 // }
 
-var req1 = "Allegheny";
-var req2 = "Bala";
 var LansdaleDoylestownLine = ["Doylestown", "Delaware Valley University", "New Britain", "Chalfont", "Link Belt", "Colmar", "Fortuna", "9th Street", "Lansdale", "Pennbrook", "North Wales", "Gwynedd Valley", "Penllyn", "Ambler", "Fort Washington", "Oreland", "North Hills", "Glenside", "Jenkintown-Wyncote", "Elkins Park", "Melrose Park", "Fern Rock T.C", "Wayne Junction", "North Broad", "Temple University", "Jefferson Station", "Suburban Station", "30th Street Station"]
 var WilmingtonNewarkLine = ["Newark", "Churchmans Crossing", "Wilmington", "Claymont", "Marcus Hook", "Highland Avenue", "Chester T.C.", "Eddystone", "Crum Lynne", "Ridley Park", "Prospect Park-Moore", "Norwood", "Glenolden", "Folcroft", "Sharon Hill", "Curtis Park", "Darby", "University City", "30th Street Station", "Suburban Station", "Jefferson Station", "Temple University"];
 var CenterCitytoUniversityCity = ["University City Station", "30th Street Station", "Suburban Station", "Jefferson Station"];
 var FernRocktoCenterCity = ["FernRock T.C.", "WayneJct", "N. Broad Station", "Temple U", "Jefferson Station", "Suburban Station", "30thStreet Station"];
-
-
-//var stops = ["University City","49th Street","30th Street Station","Suburban Station","Jefferson Station","Angora","Fernwood-Yeadon","Darby","Temple University","Wynnefield Avenue",""];
 var airport = [ "AIRPORT TERMINALS E and F",
 "AIRPORT TERMINALS C and D",
 "AIRPORT TERMINAL B",
@@ -274,6 +261,10 @@ var WestTrenton = ["West Trenton, NJ",
 "30th Street Station",
 "University City"
 ];
+
+
+var req1 = "Allegheny";
+var req2 = "Bala";
 
 var queryURL = "https://septa.p.mashape.com/hackathon/NextToArrive/?req1=" +req1.trim() + "&req2=" + req2.trim() +"&req3=1";
 
