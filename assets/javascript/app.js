@@ -18,6 +18,7 @@
 
 var req1 = "Allegheny";
 var req2 = "Bala";
+
 //var stops = ["University City","49th Street","30th Street Station","Suburban Station","Jefferson Station","Angora","Fernwood-Yeadon","Darby","Temple University","Wynnefield Avenue",""];
 var airport = [ "AIRPORT TERMINALS E and F",
 "AIRPORT TERMINALS C and D",
