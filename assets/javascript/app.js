@@ -9,7 +9,7 @@ function get_type_of_ride(){
     $("#stops_list").empty();
     var checked_radio_id = $(this).val();
     var stops_array = [];
-    console.log(checked_radio_id);
+    //console.log(checked_radio_id);
     switch (checked_radio_id){
         case "AirportLine" : stops_array = "";
             break;
@@ -47,7 +47,7 @@ function get_type_of_ride(){
     // $("#stops_list").append("<select class='form-control'>");
     // for(var i=0; i<stops_array.length; i++){
     //     $("#stops_list").append("<option id='"+stops_array[i]+"'>"+stops_array[i]+"</option>");
-    // }
+    // };
     // $("#stops_list").append("</select>");
     
     let select = $("<select>");
@@ -72,7 +72,7 @@ function get_type_of_ride(){
 
 var req1 = "Allegheny";
 var req2 = "Bala";
-var LansdaleDoylestownLine = ["Doylestown", "Delaware Valley University", "New Britain", "Chalfont", "Link Belt", "Colmar", "Fortuna", "9th Street", "Lansdale", "Pennbrook", "North Wales", "Gwynedd Valley", "Penllyn", "Ambler", "Fort Washington", "Oreland", "North Hills", "Glenside", "Jenkintown-Wyncote", "Elkins Park", "Melrose Park", "Fern Rock T.C", "Wayne Junction", "North Broad", "Temple University", "Jefferson Station", "Suburban Station", "30th Street Station"]
+var LansdaleDoylestownLine = ["Doylestown", "Delaware Valley University", "New Britain", "Chalfont", "Link Belt", "Colmar", "Fortuna", "9th Street", "Lansdale", "Pennbrook", "North Wales", "Gwynedd Valley", "Penllyn", "Ambler", "Fort Washington", "Oreland", "North Hills", "Glenside", "Jenkintown-Wyncote", "Elkins Park", "Melrose Park", "Fern Rock T.C", "Wayne Junction", "North Broad", "Temple University", "Jefferson Station", "Suburban Station", "30th Street Station"];
 var WilmingtonNewarkLine = ["Newark", "Churchmans Crossing", "Wilmington", "Claymont", "Marcus Hook", "Highland Avenue", "Chester T.C.", "Eddystone", "Crum Lynne", "Ridley Park", "Prospect Park-Moore", "Norwood", "Glenolden", "Folcroft", "Sharon Hill", "Curtis Park", "Darby", "University City", "30th Street Station", "Suburban Station", "Jefferson Station", "Temple University"];
 var CenterCitytoUniversityCity = ["University City Station", "30th Street Station", "Suburban Station", "Jefferson Station"];
 var FernRocktoCenterCity = ["FernRock T.C.", "WayneJct", "N. Broad Station", "Temple U", "Jefferson Station", "Suburban Station", "30thStreet Station"];
