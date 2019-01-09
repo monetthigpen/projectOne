@@ -18,3 +18,7 @@ h1 {
     background-image: url("../images/headerbg.png");
     color: rgb(246,247,235, .95);
 }
+#rout_img{
+    height: 200px;
+    width: auto;
+}
