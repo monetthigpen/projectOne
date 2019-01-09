@@ -139,8 +139,10 @@
                                   </div>
                                 </div>
                               </fieldset>
-                              <div id="stops_list">
-
+                              <div id="stops">
+                                <div id="beginning_stop"></div>
+                                <div id="destination_stop"></div>
+                                <br>
                               </div>
                               <div class="form-group row">
                                     <div>
@@ -153,15 +155,42 @@
                 <div class="col-sm-4">
                     <div id="result">
                         <h3>About your Trip!</h3>
+                        <br>
+                        <div id="route" class="row">
+                          <div class="col-xs-4">
+                              <img id="rout_img" src="assets/images/station.png">
+                              
+                          </div>
+                          <div class="col-xs-8">
+                            <p>FROM : </p>
+                            <p class="font-weight-bold"><span id="from"></span>
+                              <span id="from_time" class="badge badge-danger"></span></p>
+                            <br><br>
+                            <p>TO : </p>
+                            <p class="font-weight-bold"><span id="to"></span>
+                              <span id="to_time" class="badge badge-danger"></span></p>
+                          </div>
+                          
+                        </div>
+                        <br>
                         <p>Your route line looks like...</p>
+
                         <img src="http://www.septa.org/site/images/nrg-regional-rail-rail-transit-line-map-700x700.jpg" >
-                        <p>With your ride being x minutes. Please open Spotify for your new playlist!</p>
+                        <p>With your ride being x minutes. Please open Spotify for your new playlist!</p
+  
+                          
+                        <br>
+                        <p>With your ride being <span id="time" class="badge badge-primary lead">???</span> minutes. Please open Spotify for your new playlist!</p>
                     </div>
+                   
                 </div>
-                <div class="col-sm-1"></div>
+                <div class="col-sm-1">
+
+                </div>
             </div>
         </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
      <script src="assets/javascript/app.js"></script>
 
 </body>
