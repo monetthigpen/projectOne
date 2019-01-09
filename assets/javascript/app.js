@@ -229,12 +229,7 @@ var PaoliThorndale = ["Thorndale",
     "Jefferson Station",
     "Temple University"
 ];
-var Cynwyd = ["Cynwyd",
-"Bala",
-"Wynnefield Avenue",
-"30th Street Station",
-"Suburban Station"
-];
+
 var Trenton= ["Trenton Transit Center",
 "Levittown-Tullytown",
 "Bristol",
