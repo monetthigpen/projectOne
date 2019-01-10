@@ -12,37 +12,53 @@ function get_type_of_ride(){
     var stops_array = [];
     console.log(checked_radio_id);
     switch (checked_radio_id){
-        case "AirportLine" : stops_array = airport;
+        case "AirportLine" : stops_array = airport, 
+            $("#route_img").html("<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/SEPTA_Airport_Line_map.svg/250px-SEPTA_Airport_Line_map.svg.png'>");
             break;
-        case "ChestnutHillEastLine" : stops_array = ChestnutHillEast;
+        case "ChestnutHillEastLine" : stops_array = ChestnutHillEast, 
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "ChestnutHillWestLine" : stops_array = ChestnutHillWest;
+        case "ChestnutHillWestLine" : stops_array = ChestnutHillWest, 
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "CynwydLine" : stops_array = Cynwyd;
+        case "CynwydLine" : stops_array = Cynwyd,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "FoxChaseLine" : stops_array = FoxChase;
+        case "FoxChaseLine" : stops_array = FoxChase,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "GlensideCombined" : stops_array = Glenside;
+        case "GlensideCombined" : stops_array = Glenside,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "Lansdale/DoylestownLine" : stops_array = LansdaleDoylestownLine;
+        case "Lansdale/DoylestownLine" : stops_array = LansdaleDoylestownLine,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "CenterCitytoUniversityCity" : stops_array = CenterCitytoUniversityCity;
+        case "CenterCitytoUniversityCity" : stops_array = CenterCitytoUniversityCity,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "ManayunkNorristownLine" : stops_array = ManayunkNorriston;
+        case "ManayunkNorristownLine" : stops_array = ManayunkNorriston,
+            $("#route_img").html("<img src='http://www.septa.org/site/images/norristown-high-speed-line-map-700x700.jpg'>");
             break;
-        case "MediaElwynLine" : stops_array = MediaElwynLine;
+        case "MediaElwynLine" : stops_array = MediaElwynLine,
+            $("#route_img").html("<img src='assets/images/SEPTA_Rail_To_City_Center_Philadelphia.jpg'>");
             break;
-        case "PaoliThorndaleLine" : stops_array = PaoliThorndale;
+        case "PaoliThorndaleLine" : stops_array = PaoliThorndale,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "TrentonLine" : stops_array = Trenton;
+        case "TrentonLine" : stops_array = Trenton,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "WarminsterLine" : stops_array = Warminster;
+        case "WarminsterLine" : stops_array = Warminster,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
-        case "WestTrentonLine" : stops_array = WestTrenton;
+        case "WestTrentonLine" : stops_array = WestTrenton,
+            $("#route_img").html("<img src='https://sictransitphiladelphia.files.wordpress.com/2015/05/screen-shot-2015-05-13-at-4-04-01-am.png?w=660&h=545'>");
             break;
-        case "WilmingtonNewarkLine" : stops_array = WilmingtonNewarkLine;
+        case "WilmingtonNewarkLine" : stops_array = WilmingtonNewarkLine,
+            $("#route_img").html("<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Wilmington_Newark_Line_2015.png/300px-Wilmington_Newark_Line_2015.png'>");
             break;
-        case "FernRocktoCenterCity" : stops_array = FernRocktoCenterCity;
+        case "FernRocktoCenterCity" : stops_array = FernRocktoCenterCity,
+            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
     }
     
@@ -101,12 +117,13 @@ function get_stops(){
 
     }).catch((errorObject) => {
         console.log("error : "+errorObject.code);
+        $("#error").remove();
         console.log("At this time there are no trains available to complete this trip");
         var error_div = $("<div id='error' class='alert alert-danger' role='alert'>");
         error_div.append("At this time there are no trains available to complete this trip");
         $("#result").append(error_div);
         $("#time").text("???");
-        $("#error").remove();
+        
         $("#from").empty();
         $("#to").empty();
         $("#from_time").empty();
@@ -310,9 +327,3 @@ var WestTrenton = ["West Trenton",
 "30th Street Station",
 "University City"
 ];
-
-
-
-
-
-
