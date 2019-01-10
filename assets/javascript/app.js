@@ -101,12 +101,13 @@ function get_stops(){
 
     }).catch((errorObject) => {
         console.log("error : "+errorObject.code);
+        $("#error").remove();
         console.log("At this time there are no trains available to complete this trip");
         var error_div = $("<div id='error' class='alert alert-danger' role='alert'>");
         error_div.append("At this time there are no trains available to complete this trip");
         $("#result").append(error_div);
         $("#time").text("???");
-        $("#error").remove();
+        
         $("#from").empty();
         $("#to").empty();
         $("#from_time").empty();
@@ -121,11 +122,10 @@ var LansdaleDoylestownLine = ["Doylestown", "Delaware Valley University", "New B
 var WilmingtonNewarkLine = ["Newark", "Churchmans Crossing", "Wilmington", "Claymont", "Marcus Hook", "Highland Ave", "Chester TC", "Eddystone", "Crum Lynne", "Ridley Park", "Prospect Park-Moore", "Norwood", "Glenolden", "Folcroft", "Sharon Hill", "Curtis Park", "Darby", "University City", "30th Street Station", "Suburban Station", "Jefferson Station", "Temple University"];
 var CenterCitytoUniversityCity = ["University City", "30th Street Station", "Suburban Station", "Jefferson Station"];
 var FernRocktoCenterCity = ["FernRock T.C.", "WayneJct", "N. Broad Station", "Temple U", "Jefferson Station", "Suburban Station", "30th Street Station"];
-var airport = [ "AIRPORT TERMINALS E and F",
-"AIRPORT TERMINALS C and D",
-"AIRPORT TERMINAL B",
-"AIRPORT TERMINAL A EAST",
-"AIRPORT TERMINAL A WEST",
+var airport = [ "Airport Terminal A",
+"Airport Terminal B",
+"Airport Terminal C-D",
+"Airport Terminal E-F",
 "Eastwick",
 "Temple University",
 "Jefferson Station",
@@ -230,12 +230,7 @@ var PaoliThorndale = ["Thorndale",
     "Jefferson Station",
     "Temple University"
 ];
-var Cynwyd = ["Cynwyd",
-"Bala",
-"Wynnefield Avenue",
-"30th Street Station",
-"Suburban Station"
-];
+
 var Trenton= ["Trenton Transit Center",
 "Levittown-Tullytown",
 "Bristol",
@@ -316,9 +311,3 @@ var WestTrenton = ["West Trenton, NJ",
 "30th Street Station",
 "University City"
 ];
-
-
-
-
-
-
