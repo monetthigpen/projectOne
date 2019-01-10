@@ -22,3 +22,7 @@ h1 {
     height: 200px;
     width: auto;
 }
+#route_img >img {
+    width: 100%;
+    height: auto;
+}
