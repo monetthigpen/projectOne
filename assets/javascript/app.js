@@ -3,6 +3,34 @@ $(document).ready(function(){
     $(document).on("click",'input[type="radio"]' ,get_type_of_ride);
     $(document).on("click","#submit_ride" ,get_stops);
     
+    $("#submit_ride").click(function(){
+        player = new YT.Player('player', {
+                width : '320',
+                height : '180',
+                videoId: 'hxxcEzM8r-4',
+playerVars: { 'autoplay': 1, 'controls': 1, 'playlist':['QrR_gm6RqCo,4cfmEgpOOZk,zhVgbZdMdb0,n7w0-KgZMdY,B76B_akQJuM,l0MqlDbZ_as,OcFHOGZ-6aM,cfhzD3QWipU,IxAcW7zgAD4,OS48Lp34Zic,3uiUHvET_jg,ieoiAeL-uow,LL_iUj-mQfg,_8xj2qp6yls,gvQ_9JDpAuU,A8a2EosJIbM,1PYNStp9jY0,BdmgKq4Mw48,h-_YEiac55s,K58JYXhb4YA,QKzobTCIRDw,2AChGszRGwI,QCtkkX2f18M,eB4oFu4BtQ8,LTzmjU8aOR4,VERVVrzLSuo,fnIu25lXXY8,tCrLnfwX088']},
+                events : {
+                    'onReady' : onPlayerReady,
+                    'onStateChange' : onPlayerStateChange
+                }
+            });
+        });
+
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onPlayerReady(event) {
+            //event.target.playVideo();
+        }
+        function onPlayerStateChange(event) {
+        if(event.data == YT.PlayerState.ENDED) {
+          player.destroy();
+            }
+        }
+    
 });
 
 function get_type_of_ride(){
@@ -10,7 +38,6 @@ function get_type_of_ride(){
     $("#destination_stop").empty();
     var checked_radio_id = $(this).val();
     var stops_array = [];
-    console.log(checked_radio_id);
     switch (checked_radio_id){
         case "AirportLine" : stops_array = airport, 
             $("#route_img").html("<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/SEPTA_Airport_Line_map.svg/250px-SEPTA_Airport_Line_map.svg.png'>");
@@ -101,13 +128,9 @@ function get_stops(){
           "Accept": "application/json"}
     }).then(function(response){
         $("#error").remove();
-        console.log(response);
-        console.log(response[0].orig_departure_time);
-        console.log(response[0].orig_arrival_time);
         var depart_time = response[0].orig_departure_time;
         var arrival_time =  response[0].orig_arrival_time;
         var ride_time = moment(arrival_time, "HH:mmA").diff(moment(depart_time, "HH:mmA"), "minutes");
-        console.log(ride_time);
         $("#time").text(ride_time);
         $("#from").text(req1);
         $("#to").text(req2);
@@ -116,14 +139,13 @@ function get_stops(){
         
 
     }).catch((errorObject) => {
-        console.log("error : "+errorObject.code);
-        $("#error").remove();
-        console.log("At this time there are no trains available to complete this trip");
         var error_div = $("<div id='error' class='alert alert-danger' role='alert'>");
         error_div.append("At this time there are no trains available to complete this trip");
         $("#result").append(error_div);
         $("#time").text("???");
-        
+        setTimeout(function(){
+            $("#error").fadeOut();
+        }, 3000);
         $("#from").empty();
         $("#to").empty();
         $("#from_time").empty();
