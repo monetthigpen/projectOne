@@ -118,9 +118,9 @@ function get_stops(){
 var req1 = "";
 var req2 = "";
 var LansdaleDoylestownLine = ["Doylestown", "Delaware Valley University", "New Britain", "Chalfont", "Link Belt", "Colmar", "Fortuna", "9th St", "Lansdale", "Pennbrook", "North Wales", "Gwynedd Valley", "Penllyn", "Ambler", "Ft Washington", "Oreland", "North Hills", "Glenside", "Jenkintown-Wyncote", "Elkins Park", "Melrose Park", "Fern Rock TC", "Wayne Junction", "North Broad", "Temple University", "Jefferson Station", "Suburban Station", "30th Street Station"]
-var WilmingtonNewarkLine = ["Newark", "Churchmans Crossing", "Wilmington", "Claymont", "Marcus Hook", "Highland Ave", "Chester TC", "Eddystone", "Crum Lynne", "Ridley Park", "Prospect Park-Moore", "Norwood", "Glenolden", "Folcroft", "Sharon Hill", "Curtis Park", "Darby", "University City", "30th Street Station", "Suburban Station", "Jefferson Station", "Temple University"];
+var WilmingtonNewarkLine = ["Newark", "Churchmans Crossing", "Wilmington", "Claymont", "Marcus Hook", "Highland Ave", "Chester TC", "Eddystone", "Crum Lynne", "Ridley Park", "Prospect Park", "Norwood", "Glenolden", "Folcroft", "Sharon Hill", "Curtis Park", "Darby", "University City", "30th Street Station", "Suburban Station", "Jefferson Station", "Temple University"];
 var CenterCitytoUniversityCity = ["University City", "30th Street Station", "Suburban Station", "Jefferson Station"];
-var FernRocktoCenterCity = ["FernRock T.C.", "WayneJct", "N. Broad Station", "Temple U", "Jefferson Station", "Suburban Station", "30th Street Station"];
+var FernRocktoCenterCity = ["Fern Rock TC", "Wayne Jct", "North Broad St", "Temple U", "Jefferson Station", "Suburban Station", "30th Street Station"];
 var airport = [ "Airport Terminal A",
 "Airport Terminal B",
 "Airport Terminal C-D",
@@ -139,7 +139,7 @@ var airport = [ "Airport Terminal A",
 "Jenkintown-Wyncote",
 "Glenside"];
 var ManayunkNorriston = ["Elm St",
-"Main Street",
+"Main St",
 "Norristown Transportation Center",
 "Conshohocken",
 "Spring Mill",
@@ -149,7 +149,7 @@ var ManayunkNorriston = ["Elm St",
 "Wissahickon",
 "East Falls",
 " Allegheny",
-"North Broad",
+"North Broad St",
 "Temple University",
 "Jefferson Station",
 "Suburban Station",
@@ -158,7 +158,7 @@ var ManayunkNorriston = ["Elm St",
 var ChestnutHillEast = ["Chestnut Hill East",
 "Gravers",
 "Wyndmoor",
-"Mount Airy",
+"Mt Airy",
 "Sedgwick",
 "Stenton",
 "Washington Lane",
@@ -230,8 +230,8 @@ var PaoliThorndale = ["Thorndale",
     "Temple University"
 ];
 
-var Trenton= ["Trenton Transit Center",
-"Levittown-Tullytown",
+var Trenton= ["Trenton",
+"Levittown",
 "Bristol",
 "Croydon",
 "Eddington",
@@ -286,7 +286,7 @@ var Glenside = ["Glenside",
 "30th Street Station",
 "University City"
 ];
-var WestTrenton = ["West Trenton, NJ",
+var WestTrenton = ["West Trenton",
 "Yardley",
 "Woodbourne",
 "Langhorne",
