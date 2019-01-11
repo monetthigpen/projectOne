@@ -43,22 +43,19 @@ function get_type_of_ride(){
             $("#route_img").html("<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/SEPTA_Airport_Line_map.svg/250px-SEPTA_Airport_Line_map.svg.png'>");
             break;
         case "ChestnutHillEastLine" : stops_array = ChestnutHillEast, 
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211794/1/SEPTA_Rail_To_Chestnut_Hill.jpg'>");
             break;
         case "ChestnutHillWestLine" : stops_array = ChestnutHillWest, 
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
-            break;
-        case "CynwydLine" : stops_array = Cynwyd,
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211795/2/SEPTA_Rail_To_Chestnut_Hill_West.jpg'>");
             break;
         case "FoxChaseLine" : stops_array = FoxChase,
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211788/1/SEPTA_Rail_To_Fox_Chase.jpg'>");
             break;
         case "GlensideCombined" : stops_array = Glenside,
             $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
             break;
         case "Lansdale/DoylestownLine" : stops_array = LansdaleDoylestownLine,
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211796/1/SEPTA_Rail_To_Doylestown.jpg'>");
             break;
         case "CenterCitytoUniversityCity" : stops_array = CenterCitytoUniversityCity,
             $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
@@ -67,19 +64,19 @@ function get_type_of_ride(){
             $("#route_img").html("<img src='http://www.septa.org/site/images/norristown-high-speed-line-map-700x700.jpg'>");
             break;
         case "MediaElwynLine" : stops_array = MediaElwynLine,
-            $("#route_img").html("<img src='assets/images/SEPTA_Rail_To_City_Center_Philadelphia.jpg'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211790/1/SEPTA_Rail_To_City_Center_Philadelphia.jpg'>");
             break;
         case "PaoliThorndaleLine" : stops_array = PaoliThorndale,
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211792/1/SEPTA_Rail_To_Center_City_Philadelphia.jpg'>");
             break;
         case "TrentonLine" : stops_array = Trenton,
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211787/2/SEPTA_Rail_To_Trenton.jpg'>");
             break;
         case "WarminsterLine" : stops_array = Warminster,
-            $("#route_img").html("<img src='http://mrbiggs.com/wp-content/uploads/2010/05/SEPTA_system_map.png'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211789/1/SEPTA_Rail_To_Warmister.jpg'>");
             break;
         case "WestTrentonLine" : stops_array = WestTrenton,
-            $("#route_img").html("<img src='https://sictransitphiladelphia.files.wordpress.com/2015/05/screen-shot-2015-05-13-at-4-04-01-am.png?w=660&h=545'>");
+            $("#route_img").html("<img src='https://moovitapp.com/index/41/public-transit-resources/line/282/211791/1/SEPTA_Rail_To_West_Trenton.jpg'>");
             break;
         case "WilmingtonNewarkLine" : stops_array = WilmingtonNewarkLine,
             $("#route_img").html("<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Wilmington_Newark_Line_2015.png/300px-Wilmington_Newark_Line_2015.png'>");
@@ -139,6 +136,7 @@ function get_stops(){
         
 
     }).catch((errorObject) => {
+        $("#error").remove();
         var error_div = $("<div id='error' class='alert alert-danger' role='alert'>");
         error_div.append("At this time there are no trains available to complete this trip");
         $("#result").append(error_div);
