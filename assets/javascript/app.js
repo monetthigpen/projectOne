@@ -366,7 +366,7 @@ function onPlayerStateChange(event) {
 if (event.data == YT.PlayerState.PLAYING && !done) {
  if (ride_time <=5) {
 event.target.setShuffle({'shufflePlaylist' : true});	
- setTimeout(stopVideo, 300000);
+ setTimeout(stopVideo, 10000);
  done = true;
    }if (ride_time <=10) {
 event.target.setShuffle({'shufflePlaylist' : true});	
